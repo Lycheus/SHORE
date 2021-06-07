@@ -101,6 +101,18 @@ int main(){
 END
 
 clang -fsoftboundcets -c hello.c
-riscv64-unknown-linux-gnu-gcc hello.o -o hello -L $RISCV/../shore-llvm/runtime -lsoftboundcets_rt -lrt -lm -static -march=rv64imac -mabi=lp64 
+#riscv64-unknown-linux-gnu-gcc hello.o -o hello -L $RISCV/../shore-llvm/runtime -lsoftboundcets_rt -lrt -lm -static -march=rv64imac -mabi=lp64 
+riscv64-unknown-linux-gnu-gcc hello.o -o hello -L ~/riscv/riscv-llvm/runtime -lsoftboundcets_rt -lm -static -march=rv64gc -mabi=lp64
 spike pk hello
 ```
+
+## Tips & Tricks
+### For shore-pk:
+You might need to change the makefile install directory to _install/bin instead gnu
+
+Be careful the default installation directory of pk is "unknown-linux-gnu" instead "_install", what make it worse is that the default pk used by spike is targeting "unknown-elf" directory instead "_install".
+You can use absolute path for pk to solve this problem. 
+```
+e.g. "spike pk binaries" -> "spike ~/<shore>/_install/pk binaries"
+```
+
