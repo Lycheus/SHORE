@@ -19,11 +19,7 @@ First, we shall keep the tool server updated.
 ```
 sudo apt-get update
 sudo apt-get -y dist-upgrade
-```
 
-Next is to build the tools (it is a very lengthy process, prepare your coffee and cookie =))
-
-```
 sudo apt-get -y install \
   binutils build-essential libtool texinfo \
   gzip zip unzip patchutils curl git \
@@ -31,10 +27,15 @@ sudo apt-get -y install \
   grep sed gawk python bc \
   zlib1g-dev libexpat1-dev libmpc-dev \
   libglib2.0-dev libfdt-dev libpixman-1-dev 
+```
 
-
+Clone the SHORE github
+```
 git clone --recursive https://github.com/Lycheus/SHORE.git
+```
 
+Next is to build the tools (it is a very lengthy process, prepare your coffee and cookie =))
+```
 cd SHORE
 mkdir _install
 export PATH=`pwd`/_install/bin:$PATH
@@ -62,7 +63,7 @@ cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" \
   ../llvm
 cmake --build . --target install
 
-#build runtime
+#build SBCETS runtime
 cd ../runtime
 make
 popd
