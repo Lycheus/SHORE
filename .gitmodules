@@ -7,3 +7,6 @@
 [submodule "shore-llvm"]
 	path = shore-llvm
 	url = https://github.com/Lycheus/shore-llvm.git
+[submodule "riscv-gnu-toolchain"]
+	path = riscv-gnu-toolchain
+	url = https://github.com/riscv/riscv-gnu-toolchain
