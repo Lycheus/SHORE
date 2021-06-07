@@ -1,5 +1,4 @@
-# SHORE
-SHORE: RISC-V Memory Safety in C
+# SHORE: RISC-V Memory Safety in C
 
 This is the repository for the accelerating pointer-based memory safety enforcement on RISC-V.
 Please refer to the DAC 2021 paper (link: ...) for detail of the implementation
