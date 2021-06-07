@@ -4,9 +4,6 @@
 [submodule "shore-pk"]
 	path = shore-pk
 	url = https://github.com/Lycheus/shore-pk.git
-[submodule "shore-gnu-toolchain"]
-	path = shore-gnu-toolchain
-	url = https://github.com/Lycheus/shore-gnu-toolchain
 [submodule "shore-llvm"]
 	path = shore-llvm
 	url = https://github.com/Lycheus/shore-llvm.git
