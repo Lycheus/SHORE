@@ -107,9 +107,23 @@ spike pk hello
 ```
 
 ## Tips & Tricks
-### For shore-pk:
-You might need to change the makefile install directory to _install/bin instead gnu
 
+### Switch to SHORE-ESS (eliminate shadow stack)
+In ```<shore>/shore-llvm``` subfolder, you can switch to ESS branch by using following commands
+```
+git checkout SHORE-ess
+```
+Remember to rebuild the LLVM compiler and runtime.
+```
+cd build
+cmake --build . --target install
+cd ../runtime
+make clean
+make
+```
+
+
+### For shore-pk:
 Be careful the default installation directory of pk is "unknown-linux-gnu" instead "_install", what make it worse is that the default pk used by spike is targeting "unknown-elf" directory instead "_install".
 You can use absolute path for pk to solve this problem. 
 ```
