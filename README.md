@@ -106,6 +106,17 @@ riscv64-unknown-linux-gnu-gcc hello.o -o hello -L $RISCV/../shore-llvm/runtime -
 spike pk hello
 ```
 
+Or a slightly more complex program with differnt pointer manipulations
+```
+cd <shore>/example
+./run.sh
+```
+
+The hardware instrumentation is integrate with the softbound pointer analysis, therefore "-fsoftobundcets" will insert the HW accelerated security operations for metadata management.
+
+The FPGA-ready rocketchip with memory safety ISA extension is avaliable in following Github:
+https://github.com/wmpmiles/rocket-chip
+
 ## Tips & Tricks
 
 ### Switch to SHORE-ESS (eliminate shadow stack)
@@ -121,7 +132,6 @@ cd ../runtime
 make clean
 make
 ```
-
 
 ### For shore-pk:
 Be careful the default installation directory of pk is "unknown-linux-gnu" instead "_install", what make it worse is that the default pk used by spike is targeting "unknown-elf" directory instead "_install".
