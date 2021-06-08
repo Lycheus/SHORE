@@ -63,7 +63,7 @@ cmake -G Ninja -DCMAKE_BUILD_TYPE="Release" \
   ../llvm
 cmake --build . --target install
 
-#build SBCETS runtime
+#build SBCETS runtime with SHORE instrumentation
 cd ../runtime
 make
 popd
@@ -83,7 +83,8 @@ mkdir build
 cd build
 ../configure --prefix=$RISCV --host=riscv64-unknown-linux-gnu
 make
-make install
+mkdir -p ../../_install/riscv64-unknown-elf/bin
+cp pk ../../_install/riscv64-unknown-elf/bin/
 popd
 ```
 
@@ -101,8 +102,7 @@ int main(){
 END
 
 clang -fsoftboundcets -c hello.c
-#riscv64-unknown-linux-gnu-gcc hello.o -o hello -L $RISCV/../shore-llvm/runtime -lsoftboundcets_rt -lrt -lm -static -march=rv64imac -mabi=lp64 
-riscv64-unknown-linux-gnu-gcc hello.o -o hello -L ~/riscv/riscv-llvm/runtime -lsoftboundcets_rt -lm -static -march=rv64gc -mabi=lp64
+riscv64-unknown-linux-gnu-gcc hello.o -o hello -L $RISCV/../shore-llvm/runtime -lsoftboundcets_rt -lm -lrt -static -march=rv64imac -mabi=lp64 
 spike pk hello
 ```
 
