@@ -1,7 +1,7 @@
 # SHORE: RISC-V Memory Safety for C/C++
 
 This is the repository for the accelerating pointer-based memory safety enforcement on RISC-V.
-Please refer to the DAC 2021 paper (link: ...) for detail of the implementation.
+Please refer to the DAC 2021 paper (link: https://ieeexplore.ieee.org/abstract/document/9586293/) for detail of the implementation.
 
 ## Quickstart:
 
@@ -140,3 +140,7 @@ You can use absolute path for pk to solve this problem.
 e.g. "spike pk binaries" -> "spike ~/<shore>/_install/pk binaries"
 ```
 
+### Paper Citation
+```
+H. -K. Dow, T. Li, W. Miles and S. Parameswaran, "SHORE: Hardware/Software Method for Memory Safety Acceleration on RISC-V," 2021 58th ACM/IEEE Design Automation Conference (DAC), 2021, pp. 289-294, doi: 10.1109/DAC18074.2021.9586293.
+```
