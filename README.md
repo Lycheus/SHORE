@@ -26,7 +26,7 @@ sudo apt-get -y install \
   make cmake ninja-build automake bison flex gperf \
   grep sed gawk python bc \
   zlib1g-dev libexpat1-dev libmpc-dev \
-  libglib2.0-dev libfdt-dev libpixman-1-dev 
+  libglib2.0-dev libfdt-dev libpixman-1-dev device-tree-compiler
 ```
 
 Clone the SHORE github
